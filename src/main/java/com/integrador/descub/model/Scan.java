@@ -2,14 +2,6 @@ package com.integrador.descub.model;
 
 import java.sql.Date;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 import jakarta.persistence.*;
 
 @Entity
@@ -18,38 +10,36 @@ public class Scan {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_scan")
-	private int id_scan;
-    
-    @Temporal(TemporalType.DATE)
-    @Column(name = "fec_registro")
-	private Date fec_registro;
+    @Column(name = "id")
+	private Long id;
 	
 	@ManyToOne
-    @JoinColumn(name = "id_Mural")
-	@Column(name = "id_Mural")
+    @JoinColumn(name = "id_mural")
     private Mural mural;
 	
 	@ManyToOne
-    @JoinColumn(name = "id_Usuario")
-	@Column(name = "id_Usuario")
+    @JoinColumn(name = "id_usuario")
     private Usuario usuario;
 
+	@Temporal(TemporalType.DATE)
+	@Column(name = "fecha_registro")
+	private Date fecha_registro;
+
 	//GET Y SET
-	public int getId_scan() {
-		return id_scan;
+	public Long getId() {
+		return id;
 	}
 
-	public void setId_scan(int id_scan) {
-		this.id_scan = id_scan;
+	public void setId(Long id_scan) {
+		this.id = id;
 	}
 
-	public Date getFec_registro() {
-		return fec_registro;
+	public Date getFecha_registro() {
+		return fecha_registro;
 	}
 
-	public void setFec_registro(Date fec_registro) {
-		this.fec_registro = fec_registro;
+	public void setFecha_registro(Date fecha_registro) {
+		this.fecha_registro = fecha_registro;
 	}
 
 	public Mural getMural() {

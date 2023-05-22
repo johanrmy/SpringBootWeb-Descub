@@ -9,21 +9,21 @@ public class Muralista {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @Column(name = "nombre")
+    @Column(name = "nombre",length = 100)
     private String nombre;
-    @Column(name="apellidos")
+    @Column(name="apellidos",length = 200)
     private String apellidos;
-    @Column(name = "seudonimo")
+    @Column(name = "seudonimo",length = 100)
     private String seudonimo;
-    @Column(name = "foto")
+    @Column(name = "foto",columnDefinition="LONGBLOB")
     private byte[] foto;
-    @Column(name = "celular")
+    @Column(name = "celular",length = 9)
     private String telefono;
-    @Column(name = "user_instagram")
+    @Column(name = "user_instagram",length = 30)
     private String userInstagram;
-    @Column(name = "user_facebook")
+    @Column(name = "user_facebook",length = 50)
     private String userFacebook;
-    @Column(name = "email")
+    @Column(name = "email",length = 250)
     private String email;
 
     public Long getId() {

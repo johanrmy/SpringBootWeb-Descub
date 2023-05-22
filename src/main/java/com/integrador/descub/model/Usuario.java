@@ -2,59 +2,51 @@ package com.integrador.descub.model;
 
 import java.sql.Date;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 import jakarta.persistence.*;
 
 
 @Entity
-@Table(name="Usuario")
+@Table(name="usuario")
 public class Usuario  {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_Usuario")
-	private int id_Usuaio;
+	@Column(name = "id")
+	private Long id;
 	
-	@Column(name = "nombres")
-	private String nombres;
+	@Column(name = "nombre",length = 100)
+	private String nombre;
 	
-	@Column(name = "apellidos")
+	@Column(name = "apellidos",length = 200)
 	private String apellidos;
-	
-	@Temporal(TemporalType.DATE)
-	@Column(name = "email")
+
+	@Column(name = "usuario",length = 50)
+	private String usuario;
+
+	@Column(name = "email",length = 250)
 	private String email;
 	
-	@Column(name = "contraseña")
-	private String contraseña;
+	@Column(name = "contrasena",length = 60)
+	private String contrasena;
 	
 	@Temporal(TemporalType.DATE)
-	@Column(name = "fech_registro")
+	@Column(name = "fecha_registro")
 	private Date fecha_registro;
-	
-	@Column(name = "usuario")
-	private String usuario;
-	
+
 	//GET Y SETT
-
-	public int getId_Usuaio() {
-		return id_Usuaio;
+	public Long getId() {
+		return id;
 	}
 
-	public void setId_Usuaio(int id_Usuaio) {
-		this.id_Usuaio = id_Usuaio;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-	public String getNombres() {
-		return nombres;
+	public String getNombre() {
+		return nombre;
 	}
 
-	public void setNombres(String nombres) {
-		this.nombres = nombres;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 	public String getApellidos() {
@@ -73,12 +65,12 @@ public class Usuario  {
 		this.email = email;
 	}
 
-	public String getContraseña() {
-		return contraseña;
+	public String getContrasena() {
+		return contrasena;
 	}
 
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
 	}
 
 	public Date getFecha_registro() {
@@ -96,7 +88,5 @@ public class Usuario  {
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
 	}
-	
-	
 
 }

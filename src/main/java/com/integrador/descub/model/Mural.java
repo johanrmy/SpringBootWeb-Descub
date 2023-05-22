@@ -1,15 +1,7 @@
 package com.integrador.descub.model;
 
+import java.math.BigDecimal;
 import java.sql.Date;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.Lob;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 import jakarta.persistence.*;
 
 @Entity
@@ -17,49 +9,48 @@ import jakarta.persistence.*;
 public class Mural {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_Mural")
-    private int id_Mural;
+    @Column(name = "id")
+    private Long id;
     
-    @Column(name = "nombre_mural")
-    private String nombre_mural;
+    @Column(name = "nombre",length = 200)
+    private String nombre;
     
-    @Column(name = "direccion")
+    @Column(name = "direccion",length = 200)
     private String direccion;
     
     @Temporal(TemporalType.DATE)
-    @Column(name = "date")
-    private Date date;
+    @Column(name = "fecha_creacion")
+    private Date fecha_creacion;
     
     @Lob
-    @Column(name = "imagen")
+    @Column(name = "imagen",columnDefinition="LONGBLOB")
     private byte[] imagen;
     
-    @Column(name = "descripcion")
+    @Column(name = "descripcion",length = 200)
     private String descripcion;
 
     @ManyToOne
-    @JoinColumn(name = "id")
-    @Column(name = "id_muralista")
+    @JoinColumn(name = "id_muralista")
     private Muralista muralista;
     
-    @Column(name = "latitud")
-    private int latidud;
+    @Column(name = "latitud", precision = 10, scale = 8)
+    private BigDecimal latidud;
     
-    @Column(name = "altitud")
-    private int altidud;
+    @Column(name = "altitud", precision = 10, scale = 8)
+    private BigDecimal altidud;
     
     // GET Y SET
-	public int getId_Mural() {
-		return id_Mural;
+	public Long getId() {
+		return id;
 	}
-	public void setId_Mural(int id_Mural) {
-		this.id_Mural = id_Mural;
+	public void setId(Long id) {
+		this.id = id;
 	}
-	public String getNombre_mural() {
-		return nombre_mural;
+	public String getNombre() {
+		return nombre;
 	}
-	public void setNombre_mural(String nombre_mural) {
-		this.nombre_mural = nombre_mural;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 	public String getDireccion() {
 		return direccion;
@@ -67,11 +58,11 @@ public class Mural {
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
-	public Date getDate() {
-		return date;
+	public Date getFecha_creacion() {
+		return fecha_creacion;
 	}
-	public void setDate(Date date) {
-		this.date = date;
+	public void setFecha_creacion(Date fecha_creacion) {
+		this.fecha_creacion = fecha_creacion;
 	}
 	public byte[] getImagen() {
 		return imagen;
@@ -91,16 +82,16 @@ public class Mural {
 	public void setMuralista(Muralista muralista) {
 		this.muralista = muralista;
 	}
-	public int getLatidud() {
+	public BigDecimal getLatidud() {
 		return latidud;
 	}
-	public void setLatidud(int latidud) {
+	public void setLatidud(BigDecimal latidud) {
 		this.latidud = latidud;
 	}
-	public int getAltidud() {
+	public BigDecimal getAltidud() {
 		return altidud;
 	}
-	public void setAltidud(int altidud) {
+	public void setAltidud(BigDecimal altidud) {
 		this.altidud = altidud;
 	}
   
