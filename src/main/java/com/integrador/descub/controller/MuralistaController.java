@@ -25,4 +25,5 @@ public class MuralistaController {
     public Muralista getMuralista(@PathVariable Long id){
         return muralistaService.getMuralista(id);
     }
+
 }

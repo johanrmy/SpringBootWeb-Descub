@@ -26,7 +26,4 @@ public class MuralController {
     public Mural getMural(@PathVariable Long id){ return muralService.getMural(id); }
 
 
-
-
-
 }
