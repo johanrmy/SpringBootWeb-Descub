@@ -16,8 +16,8 @@ public class PaletaService implements PaletaDao {
     PaletaRepository paletaRepository;
 
 
-    public Paleta getPaleta(Long mural)
+    public Paleta getPaleta(Long id_mural)
     {
-        return this.paletaRepository.findById(Math.toIntExact(mural)).get();
+        return this.paletaRepository.findById(Math.toIntExact(id_mural)).get();
     }
 }

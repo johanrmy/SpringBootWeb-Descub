@@ -14,8 +14,8 @@ public class PaletaController {
     @Autowired
     PaletaService paletaService;
 
-    @RequestMapping(value = "getPaleta/{mural}")
-    public Paleta getPaleta(@PathVariable Long mural){ return paletaService.getPaleta(mural); }
+    @RequestMapping(value = "getPaleta/{id_mural}")
+    public Paleta getPaleta(@PathVariable Long id_mural){ return paletaService.getPaleta(id_mural); }
 
 
 }
