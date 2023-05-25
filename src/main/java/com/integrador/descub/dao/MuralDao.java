@@ -8,4 +8,6 @@ public interface MuralDao {
     public List<Mural> getAllMurales();
 
     public Mural getMural(Long id);
+
+
 }
