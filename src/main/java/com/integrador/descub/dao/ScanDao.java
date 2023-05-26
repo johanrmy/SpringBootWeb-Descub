@@ -6,10 +6,11 @@ import java.util.List;
 
 public interface ScanDao {
 
-    public Scan getMurales(Long id_usuario);
+    public List<Scan> getMurales();
+
+    //public Scan getMurales(Long id_usuario);
 
 
-
-
+    public Scan getMuralesId(Long id_mural);
 
 }
