@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("paleta")
 public class PaletaController {
@@ -14,8 +16,10 @@ public class PaletaController {
     @Autowired
     PaletaService paletaService;
 
-    @RequestMapping(value = "getPaleta/{id_mural}")
-    public Paleta getPaleta(@PathVariable Long id_mural){ return paletaService.getPaleta(id_mural); }
+    @RequestMapping(value = "getPaletaMural/{id_mural}")
+    public List<Paleta> getPaletaMural(@PathVariable Long id_mural){
+        return paletaService.getPaletaMural(id_mural);
+    }
 
 
 }

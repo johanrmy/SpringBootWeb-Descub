@@ -10,14 +10,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class PaletaService implements PaletaDao {
+public class PaletaService {
 
     @Autowired
     PaletaRepository paletaRepository;
 
 
-    public Paleta getPaleta(Long id_mural)
-    {
-        return this.paletaRepository.findById(Math.toIntExact(id_mural)).get();
+    public List<Paleta> getPaletaMural(Long id_mural){
+        List<Paleta> paletas = new ArrayList<>();
+        this.paletaRepository.findByMuralId(id_mural).forEach(paletas::add);
+        return paletas;
     }
 }
