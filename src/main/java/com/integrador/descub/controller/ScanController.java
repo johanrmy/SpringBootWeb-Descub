@@ -16,16 +16,11 @@ public class ScanController {
     @Autowired
     ScanService scanService;
 
-    @RequestMapping(value = "getMurales")
-    public List<Scan> getMurales(){
-        return scanService.getMurales();
-    }
+    @RequestMapping(value = "getMuralesIdUsuario/{id_usuario}")
+    public List<Scan> getMuralesIdUsuario(@PathVariable Long id_usuario){return scanService.getMuralesIdUsuario(id_usuario);}
 
-    //@RequestMapping(value = "getMurales/{id_usuario}")
-    //public Scan getScan(@PathVariable Long id_usuario){ return scanService.getMurales(id_usuario);}
-
-    @RequestMapping(value = "getMuralesId/{id_mural}")
-    public Scan getScanMural(@PathVariable Long id_mural){ return scanService.getMuralesId(id_mural);}
+    @RequestMapping(value = "getMuralesIdMural/{id_mural}")
+    public List<Scan> getMuralesIdMural(@PathVariable Long id_mural){return scanService.getMuralesIdMural(id_mural);}
 
 
 

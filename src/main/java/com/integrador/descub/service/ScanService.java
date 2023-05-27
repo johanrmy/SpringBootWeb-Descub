@@ -17,18 +17,18 @@ public class ScanService implements ScanDao {
     @Autowired
     ScanRepository scanRepository;
 
-    public List<Scan> getMurales()
+    public List<Scan> getMuralesIdUsuario(Long id_usuario)
     {
-        List<Scan> scans = new ArrayList<Scan>();
-        this.scanRepository.findAll().forEach(scans::add);
+        List<Scan> scans = new ArrayList<>();
+        this.scanRepository.findByUsuarioId(id_usuario).forEach(scans::add);
         return scans;
     }
 
-
-    //public Scan getMurales(Long id_usuario){return this.scanRepository.findById(Math.toIntExact(id_usuario)).get();}
-
-
-    public Scan getMuralesId(Long id_mural){return this.scanRepository.findById(Math.toIntExact(id_mural)).get();}
-
+    public List<Scan> getMuralesIdMural(Long id_mural)
+    {
+        List<Scan> scans = new ArrayList<>();
+        this.scanRepository.findByMuralId(id_mural).forEach(scans::add);
+        return scans;
+    }
 
 }
