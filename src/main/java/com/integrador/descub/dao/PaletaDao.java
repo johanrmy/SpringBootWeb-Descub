@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface PaletaDao {
 
-    public Paleta getPaleta(Long id_mural);
+    public List<Paleta> getPaletaMural(Long id_mural);
 
 }
