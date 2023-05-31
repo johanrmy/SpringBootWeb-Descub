@@ -1,6 +1,7 @@
 package com.integrador.descub.service;
 
 import com.integrador.descub.dao.ScanDao;
+import com.integrador.descub.model.Muralista;
 import com.integrador.descub.model.Scan;
 import com.integrador.descub.repository.ScanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,5 +50,9 @@ public class ScanService implements ScanDao {
         //this.scanRepository.findByMuralId(id_mural).forEach(scans::add);
         //return scans;
     //}
+
+    public Scan getScanId(Long id){
+        return this.scanRepository.findById(Math.toIntExact(id)).get();
+    }
 
 }

@@ -1,6 +1,7 @@
 package com.integrador.descub.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
+import com.integrador.descub.model.Muralista;
 import com.integrador.descub.model.Scan;
 import com.integrador.descub.service.ScanService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +46,10 @@ public class ScanController {
     //@RequestMapping(value = "getMuralesIdMural/{id_mural}")
     //public List<Scan> getMuralesIdMural(@PathVariable Long id_mural){return scanService.getMuralesIdMural(id_mural);}
 
+    @RequestMapping(value = "getScanId/{id}")
+    public Scan getScanId(@PathVariable Long id){
+        return scanService.getScanId(id);
+    }
 
 
 }
