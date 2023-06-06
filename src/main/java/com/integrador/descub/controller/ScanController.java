@@ -5,6 +5,7 @@ import com.integrador.descub.model.Muralista;
 import com.integrador.descub.model.Scan;
 import com.integrador.descub.service.ScanService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("mural")
+@CrossOrigin(origins = "http://localhost:5173")
 public class ScanController {
 
     @Autowired
