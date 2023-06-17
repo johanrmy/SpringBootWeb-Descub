@@ -35,8 +35,6 @@ class MuralControllerTest {
     @Test
     void getAllMurales() {
 
-
-
         //Se crea una lista del modelo Mural
         List<Mural> murales = new ArrayList<>();
 
@@ -52,18 +50,6 @@ class MuralControllerTest {
         mural1.setLatidud(BigDecimal.valueOf(40.12345678));
         mural1.setAltidud(BigDecimal.valueOf(-73.98765432));
         murales.add(mural1);
-
-        Mural mural2 = new Mural();
-        mural2.setId(2L);
-        mural2.setNombre("Mural 2");
-        mural2.setDireccion("Dirección 2");
-        mural2.setFecha_creacion(Date.valueOf("2023-06-02"));
-        mural2.setImagen(new byte[]{4, 5, 6});
-        mural2.setDescripcion("Descripción 2");
-        mural2.setMuralista(new Muralista());
-        mural2.setLatidud(BigDecimal.valueOf(40.87654321));
-        mural2.setAltidud(BigDecimal.valueOf(-73.12345678));
-        murales.add(mural2);
 
         //Se configura muralService para que, al llamar al método getAllMurales(), devuelva la lista murales utilizando thenReturn().
         when(muralService.getAllMurales()).thenReturn(murales);
@@ -95,9 +81,6 @@ class MuralControllerTest {
 
         // Verificar el resultado
         assertEquals(muralEsperado, result);
-
-
-
 
     }
 }
