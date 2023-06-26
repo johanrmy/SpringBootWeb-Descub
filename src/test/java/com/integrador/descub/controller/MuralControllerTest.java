@@ -47,8 +47,8 @@ class MuralControllerTest {
         mural1.setImagen(new byte[]{1, 2, 3});
         mural1.setDescripcion("Descripción 1");
         mural1.setMuralista(new Muralista());
-        mural1.setLatidud(BigDecimal.valueOf(40.12345678));
-        mural1.setAltidud(BigDecimal.valueOf(-73.98765432));
+        mural1.setLatitud(BigDecimal.valueOf(40.12345678));
+        mural1.setAltitud(BigDecimal.valueOf(-73.98765432));
         murales.add(mural1);
 
         //Se configura muralService para que, al llamar al método getAllMurales(), devuelva la lista murales utilizando thenReturn().

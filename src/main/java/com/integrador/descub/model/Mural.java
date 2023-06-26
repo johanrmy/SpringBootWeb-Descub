@@ -34,10 +34,24 @@ public class Mural {
     private Muralista muralista;
     
     @Column(name = "latitud", precision = 10, scale = 8)
-    private BigDecimal latidud;
+    private BigDecimal latitud;
     
     @Column(name = "altitud", precision = 10, scale = 8)
-    private BigDecimal altidud;
+    private BigDecimal altitud;
+
+	@Column(name = "foto1",columnDefinition="LONGBLOB")
+	private byte[] foto1;
+
+	@Column(name = "foto2",columnDefinition="LONGBLOB")
+	private byte[] foto2;
+
+	@Column(name = "foto3",columnDefinition="LONGBLOB")
+	private byte[] foto3;
+
+	@Column(name = "foto4",columnDefinition="LONGBLOB")
+	private byte[] foto4;
+
+
     
     // GET Y SET
 	public Long getId() {
@@ -82,17 +96,48 @@ public class Mural {
 	public void setMuralista(Muralista muralista) {
 		this.muralista = muralista;
 	}
-	public BigDecimal getLatidud() {
-		return latidud;
+	public BigDecimal getLatitud() {
+		return latitud;
 	}
-	public void setLatidud(BigDecimal latidud) {
-		this.latidud = latidud;
+	public void setLatitud(BigDecimal latitud) {
+		this.latitud = latitud;
 	}
-	public BigDecimal getAltidud() {
-		return altidud;
+	public BigDecimal getAltitud() {
+		return altitud;
 	}
-	public void setAltidud(BigDecimal altidud) {
-		this.altidud = altidud;
+	public void setAltitud(BigDecimal altitud) {
+		this.altitud = altitud;
 	}
-  
+
+	public byte[] getFoto1() {
+		return foto1;
+	}
+
+	public void setFoto1(byte[] foto1) {
+		this.foto1 = foto1;
+	}
+
+	public byte[] getFoto2() {
+		return foto2;
+	}
+
+	public void setFoto2(byte[] foto2) {
+		this.foto2 = foto2;
+	}
+
+	public byte[] getFoto3() {
+		return foto3;
+	}
+
+	public void setFoto3(byte[] foto3) {
+		this.foto3 = foto3;
+	}
+
+	public byte[] getFoto4() {
+		return foto4;
+	}
+
+	public void setFoto4(byte[] foto4) {
+		this.foto4 = foto4;
+	}
 }
