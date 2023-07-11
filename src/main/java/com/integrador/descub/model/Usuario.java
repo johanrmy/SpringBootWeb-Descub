@@ -6,12 +6,12 @@ import jakarta.persistence.*;
 
 
 @Entity
-@Table(name="usuario")
+@Table(name="descub_usuario")
 public class Usuario  {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	private Long id;
+	private Integer id;
 	
 	@Column(name = "nombre",length = 100)
 	private String nombre;
@@ -19,25 +19,20 @@ public class Usuario  {
 	@Column(name = "apellidos",length = 200)
 	private String apellidos;
 
-	@Column(name = "usuario",length = 50)
-	private String usuario;
-
 	@Column(name = "email",length = 250)
 	private String email;
-	
-	@Column(name = "contrasena",length = 60)
-	private String contrasena;
 	
 	@Temporal(TemporalType.DATE)
 	@Column(name = "fecha_registro")
 	private Date fecha_registro;
 
 	//GET Y SETT
-	public Long getId() {
+
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -65,14 +60,6 @@ public class Usuario  {
 		this.email = email;
 	}
 
-	public String getContrasena() {
-		return contrasena;
-	}
-
-	public void setContrasena(String contrasena) {
-		this.contrasena = contrasena;
-	}
-
 	public Date getFecha_registro() {
 		return fecha_registro;
 	}
@@ -80,13 +67,4 @@ public class Usuario  {
 	public void setFecha_registro(Date fecha_registro) {
 		this.fecha_registro = fecha_registro;
 	}
-
-	public String getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
-	}
-
 }

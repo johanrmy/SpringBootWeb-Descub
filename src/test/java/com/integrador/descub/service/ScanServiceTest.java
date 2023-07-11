@@ -36,17 +36,17 @@ class ScanServiceTest {
         scans.add(new Scan());
 
         // Definir el comportamiento del repositorio
-        when(scanRepository.findByUsuarioId(1L)).thenReturn(scans);
+        when(scanRepository.findByUsuarioId(1)).thenReturn(scans);
 
         // Llamar al método del servicio
-        List<Scan> resultado = scanService.getMuralesIdUsuario(1L);
+        List<Scan> resultado = scanService.getMuralesIdUsuario(1);
 
         // Verificar el resultado
         assertNotNull(resultado);
         assertEquals(2, resultado.size());
 
         // Verificar que se llamó al repositorio con el id de usuario correcto
-        verify(scanRepository, times(1)).findByUsuarioId(1L);
+        verify(scanRepository, times(1)).findByUsuarioId(1);
     }
 
     @Test
@@ -56,17 +56,17 @@ class ScanServiceTest {
         scans.add(new Scan());
 
         // Definir el comportamiento del repositorio
-        when(scanRepository.findByMuralId(1L)).thenReturn(scans);
+        when(scanRepository.findByMuralId(1)).thenReturn(scans);
 
         // Llamar al método del servicio
-        List<Scan> resultado = scanService.getMuralesIdMural(1L);
+        List<Scan> resultado = scanService.getMuralesIdMural(1);
 
         // Verificar el resultado
         assertNotNull(resultado);
         assertEquals(2, resultado.size());
 
         // Verificar que se llamó al repositorio con el id de mural correcto
-        verify(scanRepository, times(1)).findByMuralId(1L);
+        verify(scanRepository, times(1)).findByMuralId(1);
     }
 
     @Test
@@ -78,7 +78,7 @@ class ScanServiceTest {
         when(scanRepository.findById(1)).thenReturn(Optional.of(scan));
 
         // Llamar al método del servicio
-        Scan resultado = scanService.getScanId(1L);
+        Scan resultado = scanService.getScanId(1);
 
         // Verificar el resultado
         assertNotNull(resultado);

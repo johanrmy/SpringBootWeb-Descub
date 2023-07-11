@@ -33,12 +33,12 @@ class MuralServiceTest {
         List<Mural> murales = new ArrayList<>();
 
         Mural mural1 = new Mural();
-        mural1.setId(1L);
+        mural1.setId(1);
         mural1.setNombre("Mural 1");
         murales.add(mural1);
 
         Mural mural2 = new Mural();
-        mural2.setId(2L);
+        mural2.setId(2);
         mural2.setNombre("Mural 2");
         murales.add(mural2);
 
@@ -60,18 +60,18 @@ class MuralServiceTest {
     void getMural() {
 
         Mural mural = new Mural();
-        mural.setId(1L);
+        mural.setId(1);
         mural.setNombre("Mural 1");
 
         // Definir el comportamiento del repositorio
         when(muralRepository.findById(1)).thenReturn(Optional.of(mural));
 
         // Llamar al método del servicio
-        Mural resultado = muralService.getMural(1L);
+        Mural resultado = muralService.getMural(1);
 
         // Verificar el resultado
         assertNotNull(resultado);
-        assertEquals(1L, resultado.getId());
+        assertEquals(1, resultado.getId());
         assertEquals("Mural 1", resultado.getNombre());
 
         // Verificar que se llamó al repositorio con el id correcto

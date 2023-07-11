@@ -40,15 +40,15 @@ class MuralControllerTest {
 
         //Insertar datos en "murales"
         Mural mural1 = new Mural();
-        mural1.setId(1L);
+        mural1.setId(1);
         mural1.setNombre("Mural 1");
         mural1.setDireccion("Dirección 1");
         mural1.setFecha_creacion(Date.valueOf("2023-06-01"));
-        mural1.setImagen(new byte[]{1, 2, 3});
+        mural1.setImagen1("urlImg");
         mural1.setDescripcion("Descripción 1");
         mural1.setMuralista(new Muralista());
-        mural1.setLatidud(BigDecimal.valueOf(40.12345678));
-        mural1.setAltidud(BigDecimal.valueOf(-73.98765432));
+        mural1.setAltitud(BigDecimal.valueOf(40.12345678));
+        mural1.setLatitud(BigDecimal.valueOf(-73.98765432));
         murales.add(mural1);
 
         //Se configura muralService para que, al llamar al método getAllMurales(), devuelva la lista murales utilizando thenReturn().
@@ -66,7 +66,7 @@ class MuralControllerTest {
     void getMural() {
 
         // ID del mural a buscar
-        Long muralId = 1L;
+        Integer muralId = 1;
 
         // Crear un objeto Mural simulado como resultado esperado
         Mural muralEsperado = new Mural();

@@ -27,7 +27,7 @@ class UsuarioServiceTest {
     @Test
     void buscar() {
         Usuario usuario = new Usuario();
-        usuario.setId(1L);
+        usuario.setId(1);
         usuario.setNombre("Rafael");
         usuario.setApellidos("Reynoso");
 
@@ -35,11 +35,11 @@ class UsuarioServiceTest {
         when(usuarioRepository.findById(1)).thenReturn(java.util.Optional.of(usuario));
 
         // Llamar al método del servicio
-        Usuario resultado = usuarioService.buscar(1L);
+        Usuario resultado = usuarioService.buscar(1);
 
         // Verificar el resultado
         assertNotNull(resultado);
-        assertEquals(1L, resultado.getId());
+        assertEquals(1, resultado.getId());
         assertEquals("Rafael", resultado.getNombre());
         assertEquals("Reynoso", resultado.getApellidos());
 

@@ -15,7 +15,7 @@ public class UsuarioController {
     UsuarioService usuarioService;
 
     @RequestMapping(value = "buscar/{id}")
-    public Usuario buscar(@PathVariable Long id){return usuarioService.buscar(id);}
+    public Usuario buscar(@PathVariable Integer id){return usuarioService.buscar(id);}
 
     @PostMapping(value = "registrar")
     public Usuario registrar(@RequestBody Usuario usuario){return usuarioService.registrar(usuario);}

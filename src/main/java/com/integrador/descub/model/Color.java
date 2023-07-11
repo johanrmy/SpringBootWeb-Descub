@@ -3,12 +3,12 @@ package com.integrador.descub.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="color")
+@Table(name="descub_color")
 public class Color {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Long id;
+    private Integer id;
 
     @Column(name = "nombre",length = 200)
     private String nombre;
@@ -26,10 +26,10 @@ public class Color {
     private String green;
 
     //GET Y SETT
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     public String getNombre() {

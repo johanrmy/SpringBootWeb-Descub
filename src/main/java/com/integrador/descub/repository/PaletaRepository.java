@@ -5,7 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface PaletaRepository extends CrudRepository<Paleta, Long> {
+public interface PaletaRepository extends CrudRepository<Paleta, Integer> {
 
-    List<Paleta> findByMuralId(Long id_mural);
+    List<Paleta> findByMuralId(Integer id_mural);
 }

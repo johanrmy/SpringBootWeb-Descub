@@ -19,7 +19,7 @@ public class PaletaController {
     PaletaService paletaService;
 
     @RequestMapping(value = "getPaletaMural/{id_mural}")
-    public List<Paleta> getPaletaMural(@PathVariable Long id_mural){
+    public List<Paleta> getPaletaMural(@PathVariable Integer id_mural){
         return paletaService.getPaletaMural(id_mural);
     }
 

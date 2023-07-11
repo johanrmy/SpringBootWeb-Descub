@@ -1,4 +1,5 @@
 package com.integrador.descub.model;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -6,35 +7,27 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="paleta")
+@Table(name="descub_paleta")
 public class Paleta {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	private Long id;
+	private Integer id;
 	    
 	@ManyToOne
-	@JoinColumn(name = "id_mural")
+	@JoinColumn(name = "id_mural_id")
 	private Mural mural;
 
 	@ManyToOne
-	@JoinColumn(name = "id_color")
+	@JoinColumn(name = "id_color_id")
 	private Color color;
 	
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
-	}
-
-	public Mural getMural() {
-		return mural;
-	}
-
-	public void setMural(Mural mural) {
-		this.mural = mural;
 	}
 
 	public Color getColor() {
@@ -43,6 +36,15 @@ public class Paleta {
 
 	public void setColor(Color color) {
 		this.color = color;
+	}
+
+	@JsonIgnore
+	public Mural getMural() {
+		return mural;
+	}
+
+	public void setMural(Mural mural) {
+		this.mural = mural;
 	}
 
 }

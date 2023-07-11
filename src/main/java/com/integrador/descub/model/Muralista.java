@@ -3,20 +3,20 @@ package com.integrador.descub.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="muralista")
+@Table(name="descub_muralista")
 public class Muralista {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "id")
-    private Long id;
+    private Integer id;
     @Column(name = "nombre",length = 100)
     private String nombre;
     @Column(name="apellidos",length = 200)
     private String apellidos;
     @Column(name = "seudonimo",length = 100)
     private String seudonimo;
-    @Column(name = "foto",columnDefinition="LONGBLOB")
-    private byte[] foto;
+    @Column(name = "foto")
+    private String foto;
     @Column(name = "celular",length = 9)
     private String telefono;
     @Column(name = "user_instagram",length = 30)
@@ -26,11 +26,11 @@ public class Muralista {
     @Column(name = "email",length = 250)
     private String email;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -58,11 +58,11 @@ public class Muralista {
         this.seudonimo = seudonimo;
     }
 
-    public byte[] getFoto() {
+    public String getFoto() {
         return foto;
     }
 
-    public void setFoto(byte[] foto) {
+    public void setFoto(String foto) {
         this.foto = foto;
     }
 

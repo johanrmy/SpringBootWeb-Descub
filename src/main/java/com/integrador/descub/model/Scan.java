@@ -7,21 +7,21 @@ import com.fasterxml.jackson.annotation.JsonView;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="scan")
+@Table(name="descub_scan")
 public class Scan {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-	private Long id;
+	private Integer id;
 
 
 	@ManyToOne
-    @JoinColumn(name = "id_mural")
+    @JoinColumn(name = "id_mural_id")
     private Mural mural;
 
 	@ManyToOne
-    @JoinColumn(name = "id_usuario")
+    @JoinColumn(name = "id_usuario_id")
     private Usuario usuario;
 
 	@Temporal(TemporalType.DATE)
@@ -31,11 +31,11 @@ public class Scan {
 
 
 	//GET Y SET
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id_scan) {
+	public void setId(Integer id_scan) {
 		this.id = id;
 	}
 

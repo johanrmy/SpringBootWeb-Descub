@@ -26,7 +26,7 @@ class UsuarioControllerTest {
 
     @Test
     void buscar() {
-        Long id = 1L;
+        Integer id = 1;
         Usuario usuario = new Usuario();
         usuario.setId(id);
         usuario.setNombre("Rafael");

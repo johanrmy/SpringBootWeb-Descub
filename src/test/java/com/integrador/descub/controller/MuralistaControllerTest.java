@@ -32,11 +32,11 @@ class MuralistaControllerTest {
 
         // Insertar datos en "muralistas"
         Muralista muralista1 = new Muralista();
-        muralista1.setId(1L);
+        muralista1.setId(1);
         muralista1.setNombre("Muralista 1");
         muralista1.setApellidos("Apellidos 1");
         muralista1.setSeudonimo("Seudonimo 1");
-        muralista1.setFoto(new byte[]{1, 2, 3});
+        muralista1.setFoto("urlImgFoto");
         muralista1.setTelefono("123456789");
         muralista1.setUserInstagram("instagram1");
         muralista1.setUserFacebook("facebook1");
@@ -58,15 +58,15 @@ class MuralistaControllerTest {
     void getMuralista() {
         // Crear un objeto Muralista de prueba
         Muralista muralista = new Muralista();
-        muralista.setId(1L);
+        muralista.setId(1);
         muralista.setNombre("Muralista de prueba");
         // Agregar más atributos según sea necesario
 
         // Configurar el comportamiento esperado del servicio
-        when(muralistaService.getMuralista(1L)).thenReturn(muralista);
+        when(muralistaService.getMuralista(1)).thenReturn(muralista);
 
         // Llamar al método del controlador que se está probando
-        Muralista result = muralistaController.getMuralista(1L);
+        Muralista result = muralistaController.getMuralista(1);
 
         // Verificar el resultado
         assertEquals(muralista, result);

@@ -7,13 +7,14 @@ import java.util.List;
 
 public interface ScanDao {
 
-    public List<Scan> getMuralesIdUsuario(Long id_usuario);
+    public List<Scan> getMuralesIdUsuario(Integer id_usuario);
 
+    public List<Scan> getAllScan();
 
+    public List<Scan> getMuralesIdMural(Integer id_mural);
 
-    public List<Scan> getMuralesIdMural(Long id_mural);
+    public Scan getScanId(Integer id);
 
-
-    public Scan getScanId(Long id);
+    public List<Scan> getScannedMuralsByEmail(String email);
 
 }

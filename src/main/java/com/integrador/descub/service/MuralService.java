@@ -15,8 +15,6 @@ public class MuralService implements MuralDao {
     @Autowired
     MuralRepository muralRepository;
 
-
-
     public List<Mural> getAllMurales()
     {
         List<Mural> murales = new ArrayList<Mural>();
@@ -24,10 +22,12 @@ public class MuralService implements MuralDao {
         return murales;
     }
 
-
-    public Mural getMural(Long id)
+    public Mural getMural(Integer id)
     {
-        return this.muralRepository.findById(Math.toIntExact(id)).get();
+        return this.muralRepository.findById(id).get();
+    }
+    public List<Mural> getMuralsByMuralistaId(Integer muralistaId) {
+        return muralRepository.findByMuralistaId(muralistaId);
     }
 
 

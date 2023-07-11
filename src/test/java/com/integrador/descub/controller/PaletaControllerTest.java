@@ -34,14 +34,14 @@ class PaletaControllerTest {
 
 
         Paleta paleta1 = new Paleta();
-        paleta1.setId(1L);
+        paleta1.setId(1);
         paletas.add(paleta1);
 
         // Configurar el comportamiento esperado del servicio
-        when(paletaService.getPaletaMural(1L)).thenReturn(paletas);
+        when(paletaService.getPaletaMural(1)).thenReturn(paletas);
 
         // Llamar al método del controlador que se está probando
-        List<Paleta> result = paletaController.getPaletaMural(1L);
+        List<Paleta> result = paletaController.getPaletaMural(1);
 
         // Verificar el resultado
         assertEquals(paletas, result);

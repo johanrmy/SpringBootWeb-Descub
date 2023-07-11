@@ -1,6 +1,7 @@
 package com.integrador.descub.service;
 
 import com.integrador.descub.dao.ScanDao;
+import com.integrador.descub.model.Mural;
 import com.integrador.descub.model.Muralista;
 import com.integrador.descub.model.Scan;
 import com.integrador.descub.repository.ScanRepository;
@@ -19,23 +20,20 @@ public class ScanService implements ScanDao {
     @Autowired
     ScanRepository scanRepository;
 
-    //public List<Scan> getMuralesIdUsuario(Long id_usuario) {
-        //List<Scan> scans = scanRepository.findByUsuarioId(id_usuario);
-
-        // Iterar sobre los scans y establecer el campo 'mural' como null para que no se incluya en la respuesta
-        //scans.forEach(scan -> scan.setMural(null));
-
-        //return scans;
-    //}
-
-    public List<Scan> getMuralesIdUsuario(Long id_usuario)
+    public List<Scan> getMuralesIdUsuario(Integer id_usuario)
     {
         List<Scan> scans = new ArrayList<>();
         this.scanRepository.findByUsuarioId(id_usuario).forEach(scans::add);
         return scans;
     }
 
-    public List<Scan> getMuralesIdMural(Long id_mural) {
+    public List<Scan> getAllScan() {
+        List<Scan > scans = new ArrayList<Scan>();
+        this.scanRepository.findAll().forEach(scans::add);
+        return scans;
+    }
+
+    public List<Scan> getMuralesIdMural(Integer id_mural) {
         List<Scan> scans = scanRepository.findByMuralId(id_mural);
 
         // Iterar sobre los scans y establecer el campo 'mural' como null para que no se incluya en la respuesta
@@ -44,15 +42,11 @@ public class ScanService implements ScanDao {
         return scans;
     }
 
-    //public List<Scan> getMuralesIdMural(Long id_mural)
-    //{
-        //List<Scan> scans = new ArrayList<>();
-        //this.scanRepository.findByMuralId(id_mural).forEach(scans::add);
-        //return scans;
-    //}
-
-    public Scan getScanId(Long id){
-        return this.scanRepository.findById(Math.toIntExact(id)).get();
+    public Scan getScanId(Integer id){
+        return this.scanRepository.findById(id).get();
     }
 
+    public List<Scan> getScannedMuralsByEmail(String email) {
+        return scanRepository.findByUsuario_Email(email);
+    }
 }

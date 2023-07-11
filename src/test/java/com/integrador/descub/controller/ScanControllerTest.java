@@ -16,6 +16,7 @@ import org.mockito.MockitoAnnotations;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
@@ -40,54 +41,35 @@ class ScanControllerTest {
         // Crear una lista de Scans de prueba
         List<Scan> scans = new ArrayList<>();
         Scan scan1 = new Scan();
-        scan1.setId(1L);
+        scan1.setId(1);
         scan1.setUsuario(new Usuario());
         scans.add(scan1);
 
         // Configurar el comportamiento esperado del ScanService mock
-        when(scanService.getMuralesIdUsuario(1L)).thenReturn(scans);
+        when(scanService.getMuralesIdUsuario(1)).thenReturn(scans);
 
         // Llamar al método del controlador que se está probando
-        List<Scan> result = scanController.getMuralesIdUsuario(1L);
+        List<Scan> result = scanController.getMuralesIdUsuario(1);
 
         // Verificar el resultado
         assertEquals(scans, result);
 
-    }
-
-    @Test
-    void getMuralesIdMural() {
-        // Crear una lista de Scans de prueba
-        List<Scan> scans = new ArrayList<>();
-        Scan scan1 = new Scan();
-        scan1.setId(1L);
-        scan1.setMural(new Mural());
-        scans.add(scan1);
-
-        // Configurar el comportamiento esperado del ScanService mock
-        when(scanService.getMuralesIdMural(1L)).thenReturn(scans);
-
-        // Llamar al método del controlador que se está probando
-        List<Scan> result = scanController.getMuralesIdMural(1L);
-
-        // Verificar el resultado
-        assertEquals(scans, result);
     }
 
     @Test
     void getScanId() {
         // Crear un Scan de prueba
         Scan scan = new Scan();
-        scan.setId(1L);
+        scan.setId(1);
         scan.setUsuario(new Usuario());
         scan.setMural(new Mural());
         scan.setFecha_registro(new Date(System.currentTimeMillis()));
 
         // Configurar el comportamiento esperado del ScanService mock
-        when(scanService.getScanId(1L)).thenReturn(scan);
+        when(scanService.getScanId(1)).thenReturn(scan);
 
         // Llamar al método del controlador que se está probando
-        Scan result = scanController.getScanId(1L);
+        Scan result = scanController.getScanId(1);
 
         // Verificar el resultado
         assertEquals(scan, result);

@@ -37,16 +37,16 @@ class PaletaServiceTest {
         paletas.add(new Paleta());
 
         // Definir el comportamiento del repositorio
-        when(paletaRepository.findByMuralId(1L)).thenReturn(paletas);
+        when(paletaRepository.findByMuralId(1)).thenReturn(paletas);
 
         // Llamar al método del servicio
-        List<Paleta> resultado = paletaService.getPaletaMural(1L);
+        List<Paleta> resultado = paletaService.getPaletaMural(1);
 
         // Verificar el resultado
         assertNotNull(resultado);
         assertEquals(2, resultado.size());
 
         // Verificar que se llamó al repositorio con el id de mural correcto
-        verify(paletaRepository, times(1)).findByMuralId(1L);
+        verify(paletaRepository, times(1)).findByMuralId(1);
     }
 }

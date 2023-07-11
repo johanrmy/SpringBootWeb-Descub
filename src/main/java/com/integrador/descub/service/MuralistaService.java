@@ -20,8 +20,8 @@ public class MuralistaService implements MuralistaDao{
         this.muralistaRepository.findAll().forEach(muralistas::add);
         return muralistas;
     }
-    public Muralista getMuralista(Long id)
+    public Muralista getMuralista(Integer id)
     {
-        return this.muralistaRepository.findById(Math.toIntExact(id)).get();
+        return this.muralistaRepository.findById(id).get();
     }
 }

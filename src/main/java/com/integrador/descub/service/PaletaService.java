@@ -16,7 +16,7 @@ public class PaletaService implements PaletaDao{
     PaletaRepository paletaRepository;
 
 
-    public List<Paleta> getPaletaMural(Long id_mural){
+    public List<Paleta> getPaletaMural(Integer id_mural){
         List<Paleta> paletas = new ArrayList<>();
         this.paletaRepository.findByMuralId(id_mural).forEach(paletas::add);
         return paletas;

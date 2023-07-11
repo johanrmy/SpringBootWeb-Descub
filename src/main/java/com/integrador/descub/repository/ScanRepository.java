@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface ScanRepository extends CrudRepository<Scan, Integer> {
 
-    List<Scan> findByUsuarioId(Long id_usuario);
+    List<Scan> findByUsuarioId(Integer id_usuario);
 
-    List<Scan> findByMuralId(Long id_mural);
+    List<Scan> findByMuralId(Integer id_mural);
 
-
+    List<Scan> findByUsuario_Email(String email);
 }

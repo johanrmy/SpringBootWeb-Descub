@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface MuralistaDao {
     public List<Muralista> getAllMuralistas();
-    public Muralista getMuralista(Long id);
+    public Muralista getMuralista(Integer id);
 }

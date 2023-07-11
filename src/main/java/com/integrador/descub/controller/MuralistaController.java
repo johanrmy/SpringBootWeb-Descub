@@ -22,7 +22,7 @@ public class MuralistaController {
         return muralistaService.getAllMuralistas();
     }
     @RequestMapping(value = "getMuralista/{id}")
-    public Muralista getMuralista(@PathVariable Long id){
+    public Muralista getMuralista(@PathVariable Integer id){
         return muralistaService.getMuralista(id);
     }
 
